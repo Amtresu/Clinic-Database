@@ -39,3 +39,4 @@ CREATE TABLE invoice_items(
     invoice_id int CONSTRAINT invoiceItem_invoices_FK REFERENCES invoices(id),
     treatments_id int CONSTRAINT invoiceItem_treatments_FK REFERENCES treatments(id)
 );
+
