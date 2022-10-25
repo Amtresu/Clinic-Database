@@ -31,3 +31,11 @@ CREATE TABLE invoices(
     medical_history_id int CONSTRAINT invoices_medHistory_FK REFERENCES medical_histories(id)
 );
 
+CREATE TABLE invoice_items(
+    id serial PRIMARY KEY,
+    unit_price decimal,
+    quantity int,
+    total_price decimal,
+    invoice_id int CONSTRAINT invoiceItem_invoices_FK REFERENCES invoices(id),
+    treatments_id int CONSTRAINT invoiceItem_treatments_FK REFERENCES treatments(id)
+);
