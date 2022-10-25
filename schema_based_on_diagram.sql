@@ -30,3 +30,4 @@ CREATE TABLE invoices(
     payed_at timestamp,
     medical_history_id int CONSTRAINT invoices_medHistory_FK REFERENCES medical_histories(id)
 );
+
