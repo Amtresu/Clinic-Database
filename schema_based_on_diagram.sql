@@ -22,3 +22,11 @@ CREATE TABLE treatment_medical_histories(
     treatments_id int CONSTRAINT treatments_FK REFERENCES treatments(id),
     PRIMARY KEY (med_history_id, treatments_id) 
 );
+
+CREATE TABLE invoices(
+    id serial PRIMARY KEY,
+    total_amount decimal,
+    generated_at timestamp,
+    payed_at timestamp,
+    medical_history_id int CONSTRAINT invoices_medHistory_FK REFERENCES medical_histories(id)
+);
